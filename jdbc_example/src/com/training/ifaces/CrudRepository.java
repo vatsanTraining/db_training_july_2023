@@ -7,4 +7,6 @@ public interface CrudRepository<T> {
 	List<T> findAll();
 	void sortedList();
 	
+	//T findById(int key);
+	
 }

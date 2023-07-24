@@ -58,13 +58,16 @@ import java.sql.*
 			 
 			 ResultSet rs =pstmt.executeQuery();
 			 
-			 int bookNumber=rs.getInt("book_number");
-			 String bookName=rs.getString("book_name");
-			 double ratePerUnit=rs.getDouble("rate_per_unit");
+			 while(rs.next()) {
+			
+				 int bookNumber=rs.getInt("book_number");
+				 String bookName=rs.getString("book_name");
+				 double ratePerUnit=rs.getDouble("rate_per_uni");
 			 
 			 Book entity = new Book(bookNumber, bookName, ratePerUnit);
 			 
 			 bookList.add(entity);
+			 }
 			
 		} catch (Exception e) {
 			e.printStackTrace();
