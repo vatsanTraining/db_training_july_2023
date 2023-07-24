@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import com.example.demo.entity.CibilScore;
+import com.example.demo.services.CibilScoreService;
 
 @SpringBootApplication
 public class CibilScoreServiceApplication {
@@ -12,7 +13,18 @@ public class CibilScoreServiceApplication {
 	public static void main(String[] args) {
 	 ConfigurableApplicationContext	ctx=SpringApplication.run(CibilScoreServiceApplication.class, args);
 	
-	 System.out.println(ctx.getBean("suresh",CibilScore.class));
+	 CibilScore suresh=ctx.getBean("suresh",CibilScore.class);
+	 CibilScore ramesh=ctx.getBean("ramesh",CibilScore.class);
+
+	 CibilScoreService service = ctx.getBean(CibilScoreService.class);
+	 
+	 service.save(suresh);
+	 service.save(ramesh);
+	 
+	 
+	 service.findAll().forEach(System.out::println);
+	 
+	 
 	 
 	 ctx.close();
 	 
