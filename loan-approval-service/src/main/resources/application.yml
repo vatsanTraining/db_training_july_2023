@@ -1,0 +1,13 @@
+server:
+  port: 7070
+
+spring:
+   application:
+    name: loan-approval-service
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka      
