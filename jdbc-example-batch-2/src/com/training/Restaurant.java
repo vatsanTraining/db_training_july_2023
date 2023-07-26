@@ -5,18 +5,49 @@ public class Restaurant  {
 	private int restaurantId;
 	private String restaurantName;
 	private double rating;
+	private String cuisine;
+	private long pincode;
 	
 	public Restaurant() {
 		super();
 	
 	}
 
-	public Restaurant(int restaurantId, String restaurantName, double rating) {
+
+	public Restaurant(int restaurantId, String restaurantName, double rating, String cuisine, long pincode) {
 		super();
 		this.restaurantId = restaurantId;
 		this.restaurantName = restaurantName;
 		this.rating = rating;
+		this.cuisine = cuisine;
+		this.pincode = pincode;
 	}
+
+
+
+	public String getcuisine() {
+		return cuisine;
+	}
+
+
+
+	public void setcuisine(String cuisine) {
+		this.cuisine = cuisine;
+	}
+
+
+
+	public long getPincode() {
+		return pincode;
+	}
+
+
+
+	public void setPincode(long pincode) {
+		this.pincode = pincode;
+	}
+
+
 
 	public int getRestaurantId() {
 		return restaurantId;
