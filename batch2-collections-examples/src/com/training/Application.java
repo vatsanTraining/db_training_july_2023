@@ -23,13 +23,17 @@ public class Application {
 		
 		  //  Supertype = subType 
 		
-		CrudRepository repo = new RestaurantService();
+		CrudRepository<Restaurant> repo = new RestaurantService();
 		
 		System.out.println(repo instanceof RestaurantService);
 		 
-		 System.out.println("Is Added :="+repo.add(shivsagar)); 
-		 System.out.println("Is Added :="+repo.add(bbq)); 
-		 System.out.println("Is Added :="+repo.add(udupi)); 
+		 try {
+			System.out.println("Is Added :="+repo.save(shivsagar)); 
+			 System.out.println("Is Added :="+repo.save(bbq)); 
+			 System.out.println("Is Added :="+repo.save(udupi));
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
 
 		 
 		 for(Restaurant eachElement: repo.findAll()) {
