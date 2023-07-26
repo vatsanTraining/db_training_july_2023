@@ -51,8 +51,36 @@ public class RestaurantService implements CrudRepository<Restaurant> {
 
 	@Override
 	public List<Restaurant> findAll() {
-		return null;
-	}
+		
+		String sql = "select * from restaurant_july_2023";
+		 
+		 List<Restaurant> list =new ArrayList<>();
+		 
+		 try(PreparedStatement pstmt = con.prepareStatement(sql)) {
+			
+			  ResultSet rs  = pstmt.executeQuery();
+			  
+			  while(rs.next()) {
+				  
+				  int restaurantId = rs.getInt("restaurant_id");
+				  String resaurantName =rs.getString("restaurant_name");
+				  double rating =rs.getDouble("rating");
+				  String cusine=rs.getString("cuisine");
+				  long pincode =rs.getLong("pincode");
+				  
+				  Restaurant obj =new Restaurant(restaurantId, resaurantName, rating, cusine, pincode);
+			 
+						  list.add(obj);
+			  }
+			 
+		} catch (Exception e) {
+		
+			 e.printStackTrace();
+		}
+		 
+		 return list;
+	 }
+	
 
 	
 }

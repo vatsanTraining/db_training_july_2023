@@ -30,11 +30,11 @@ public class Application {
 		System.out.println(repo instanceof RestaurantService);
 		 
 		 try {
-			System.out.println("Is Added :="+repo.save(shivsagar)); 
-			 System.out.println("Is Added :="+repo.save(bbq)); 
-			 System.out.println("Is Added :="+repo.save(udupi));
-			 System.out.println("Is Added :="+repo.save(athithi));
-			 
+//			System.out.println("Is Added :="+repo.save(shivsagar)); 
+//			 System.out.println("Is Added :="+repo.save(bbq)); 
+//			 System.out.println("Is Added :="+repo.save(udupi));
+//			 System.out.println("Is Added :="+repo.save(athithi));
+//			 
 		} catch (Exception e) {
 
 			System.err.println(e.getMessage());
