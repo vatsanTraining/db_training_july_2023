@@ -27,7 +27,9 @@ public class RestaurantService implements CrudRepository<Restaurant> {
 		 } else {
 			 
 			 String sql = "insert into restaurant_july_2023 values(?,?,?,?,?)";
+			 
 			 int rowAdded =0;
+			 
 			 try(PreparedStatement pstmt = con.prepareStatement(sql)) {
 				
 				 pstmt.setInt(1, t.getRestaurantId());

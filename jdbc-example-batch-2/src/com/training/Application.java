@@ -9,16 +9,17 @@ public class Application {
 		
 		
 		Restaurant udupi =
-				new Restaurant(1010, "Udupi Krishna", 4.6);
+				new Restaurant(1010, "Udupi Krishna", 4.6,"indian",601010);
 		
 		Restaurant bbq =
-				new Restaurant(2010, "Barbeque Nation", 3.8);
+				new Restaurant(2010, "Barbeque Nation", 3.8,"mexican",202020);
 
 		Restaurant shivsagar =
-				new Restaurant(3010, "Shiv Sagar", 4.2);
+				new Restaurant(3010, "Shiv Sagar", 4.2,"punjabi",1020303);
 
 		Restaurant athithi =
-				new Restaurant(4010, "Athithi", 2.2);
+				new Restaurant(4010, "Athithi", 2.2,"north indian",505050);
+		
 		System.out.println("Best Restaurant in the City:=" +udupi.getRestaurantName());
 
 		System.out.println(udupi);
