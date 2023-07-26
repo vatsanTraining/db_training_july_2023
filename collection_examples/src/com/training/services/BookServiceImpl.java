@@ -47,4 +47,10 @@ public class BookServiceImpl implements CrudRepository<Book> {
 		
 	}
 
+	@Override
+	public Book findById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
