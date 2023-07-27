@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,7 +33,13 @@ public class RestaurantController {
 		return this.service.findAll();
 	}
 	
-	
+
+	@GetMapping("/{arg}")
+	private List<Restaurant> findByCuisine(@PathVariable String arg){
+		
+		return this.service.findByCuisine(arg);
+	}
+
 	@PostMapping
 	private ResponseEntity<Restaurant> save(@RequestBody Restaurant entity){
 		

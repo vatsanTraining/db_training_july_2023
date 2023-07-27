@@ -1,3 +1,4 @@
+
 spring:
   datasource:
     password: srivatsan
@@ -9,3 +10,15 @@ spring:
     hibernate:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  application:
+    name: restaurant-service
+        
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+        
+ 
+        

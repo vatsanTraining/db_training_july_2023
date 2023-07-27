@@ -26,6 +26,10 @@ public class RestaurantService {
 		return this.repo.findAll();
 	}
 	
+  public List<Restaurant> findByCuisine(String arg){
+		
+		return this.repo.findByCuisine(arg);
+	}
 	
 	public Restaurant create(Restaurant entity) {
 		return this.repo.save(entity);

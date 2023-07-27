@@ -1,6 +1,10 @@
 package com.training.services;
 
 import com.training.ifaces.*;
+
+import java.util.Arrays;
+import java.util.List;
+
 import com.training.*;
 public class RestaurantService implements CrudRepository {
 	
@@ -36,5 +40,13 @@ public class RestaurantService implements CrudRepository {
 	}
 
 	
+	public List<String> getNames(){
+		
+		return Arrays.asList("Ramesh","mani","Suresh","Magesh",null);
+	}
 	
+	public String findNameById(int idx) {
+		
+		return getNames().get(idx);
+	}
 }
