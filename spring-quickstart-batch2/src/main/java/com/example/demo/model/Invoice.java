@@ -21,13 +21,19 @@ public class Invoice {
 	private Customer customer;
 	
 	@Autowired
-	private List<Product> product;
+	private List<Product> products;
 	
 //	@Autowired
 //	public Invoice(Customer customer, Product product) {
 //		super();
 //		this.customer = customer;
 //		this.product = product;
+//	}
+	
+//	@Autowired
+//	public void setProducts(List<Product> products) {
+//		
+//		this.products = products;
 //	}
 	
 	
