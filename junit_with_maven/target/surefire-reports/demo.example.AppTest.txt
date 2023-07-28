@@ -1,12 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: demo.example.AppTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.154 s <<< FAILURE! - in demo.example.AppTest
-testGetNameForNull{int}[3]  Time elapsed: 0.034 s  <<< FAILURE!
+Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.355 s <<< FAILURE! - in demo.example.AppTest
+testGetNameForNull{int}[3]  Time elapsed: 0.05 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <null> but was: <Vivek>
 	at demo.example.AppTest.testGetNameForNull(AppTest.java:50)
 
-testGetNameForNull{int}[4]  Time elapsed: 0 s  <<< FAILURE!
+testGetNameForNull{int}[4]  Time elapsed: 0.001 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <null> but was: <Magi>
 	at demo.example.AppTest.testGetNameForNull(AppTest.java:50)
 

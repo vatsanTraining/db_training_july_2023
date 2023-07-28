@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="demo.example.AppTest" time="0.355" tests="6" errors="0" skipped="0" failures="2">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="demo.example.TestDiscountService" time="3.995" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -58,18 +58,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="shouldAnswerWithTrue" classname="demo.example.AppTest" time="0.019"/>
-  <testcase name="testGetNameSize" classname="demo.example.AppTest" time="0"/>
-  <testcase name="testGetNameForNull{int}[1]" classname="demo.example.AppTest" time="0.128"/>
-  <testcase name="testGetNameForNull{int}[2]" classname="demo.example.AppTest" time="0.003"/>
-  <testcase name="testGetNameForNull{int}[3]" classname="demo.example.AppTest" time="0.05">
-    <failure message="expected: &lt;null&gt; but was: &lt;Vivek&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <null> but was: <Vivek>
-	at demo.example.AppTest.testGetNameForNull(AppTest.java:50)
-]]></failure>
-  </testcase>
-  <testcase name="testGetNameForNull{int}[4]" classname="demo.example.AppTest" time="0.001">
-    <failure message="expected: &lt;null&gt; but was: &lt;Magi&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <null> but was: <Magi>
-	at demo.example.AppTest.testGetNameForNull(AppTest.java:50)
-]]></failure>
-  </testcase>
+  <testcase name="test" classname="demo.example.TestDiscountService" time="3.994"/>
 </testsuite>
