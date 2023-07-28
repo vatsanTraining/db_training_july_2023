@@ -1,5 +1,8 @@
 package com.training;
 
+import com.training.ifaces.DoctorRepository;
+import com.training.services.DoctorService;
+
 public class Application {
 
 	public static void main(String[] args) {
@@ -12,6 +15,10 @@ public class Application {
 		
 		Doctor shyam = new Doctor();
 		
+		 shyam.setDoctorName("Shyam");
+		 shyam.setDoctorId(2030);
+		 shyam.setDepartment("Eye");
+		 shyam.setPhoneNumber(23838121);
 		System.out.println("Eye Doctor:=>"+shyam.getDoctorName());
 		
 		
@@ -19,7 +26,24 @@ public class Application {
 		
 		System.out.println(mani);
 		
+		//Substiutaion
 		
+		// supertype = subtype
+		DoctorRepository repo = new DoctorService();
+		
+		 System.out.println("Is Added :="+ repo.add(mani));
+		 System.out.println("Is Added :="+ repo.add(ram));
+		 System.out.println("Is Added :="+ repo.add(shyam));
+
+		 Doctor[] list = repo.findAll();
+		 
+		 for(Doctor eachDoctor:list) {
+			 
+			 if(eachDoctor!=null) {
+				 System.out.println(eachDoctor);
+			 }
+		 }
+		 
 	}
 
 }
