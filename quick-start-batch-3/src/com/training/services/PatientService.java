@@ -19,7 +19,12 @@ public class PatientService implements PatientRepository {
 		this.patientList = new TreeSet<>();
 	}
 	@Override
-	public boolean add(Patient patient) {
+	public boolean add(Patient patient) throws Exception {
+		
+		if(patient.getAge()<0 || patient.getAge()>100) {
+			throw new Exception("Invalid Age ");
+		}
+		
 		return this.patientList.add(patient);
 	}
 

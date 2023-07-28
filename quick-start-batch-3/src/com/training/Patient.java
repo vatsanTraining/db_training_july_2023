@@ -1,5 +1,7 @@
 package com.training;
 
+import java.util.Objects;
+
 public class Patient implements Comparable<Patient> {
 
 	private int patientId;
@@ -46,6 +48,24 @@ public class Patient implements Comparable<Patient> {
 	public String toString() {
 		return "Patient [patientId=" + patientId + ", patientName=" + patientName + ", age=" + age + ", phoneNumber="
 				+ phoneNumber + "]";
+	}
+	
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(age, patientId, patientName, phoneNumber);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Patient other = (Patient) obj;
+		return age == other.age && patientId == other.patientId && Objects.equals(patientName, other.patientName)
+				&& phoneNumber == other.phoneNumber;
 	}
 	@Override
 	public int compareTo(Patient o) {

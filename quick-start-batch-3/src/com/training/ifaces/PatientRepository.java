@@ -5,7 +5,7 @@ import com.training.Patient;
 public interface PatientRepository {
 
 	
-	 boolean add(Patient patient);
+	 boolean add(Patient patient) throws Exception;
 		
 	 boolean add(Patient ...patients);
 	
