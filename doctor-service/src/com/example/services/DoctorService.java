@@ -1,5 +1,6 @@
 package com.example.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.sql.*;
 import com.example.ifaces.CrudRepository;
@@ -22,7 +23,9 @@ public class DoctorService implements CrudRepository<Doctor> {
 	public int add(Doctor t) {
 
 		int rowAdded = 0;
+		
 		String sql = "insert into doctor_july_2023 values(?,?,?,?)";
+		
 		try(PreparedStatement pstmt = con.prepareStatement(sql)){
 			
 		
@@ -42,8 +45,35 @@ public class DoctorService implements CrudRepository<Doctor> {
 
 	@Override
 	public List<Doctor> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+
+		List<Doctor> list = new ArrayList<>();
+		
+		String sql = "select * from doctor_july_2023";
+		
+		try (PreparedStatement pstmt = con.prepareStatement(sql)){
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				int doctorId = rs.getInt("doctor_id");
+				String doctorName = rs.getString("doctor_name");
+				String department = rs.getString("department");
+				long phoneNumber = rs.getLong("phone_number");
+				
+				Doctor obj =
+						new Doctor(doctorId, doctorName, department, phoneNumber);
+			
+						list.add(obj);
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return list;
 	}
 
 }
