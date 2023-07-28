@@ -1,8 +1,12 @@
 package com.training.entity;
 
+import com.example.stereotypes.Table;
+
+@Table(name = "doctor")
 public class Doctor  {
 
 	private int doctorId;
+
 	private String doctorName;
 	private String department;
 	private long phoneNumber;
