@@ -3,7 +3,6 @@ package com.example;
 import java.util.List;
 import java.util.function.Predicate;
 
-import javax.print.Doc;
 
 import com.example.ifaces.CrudRepository;
 import com.example.services.DoctorService;
