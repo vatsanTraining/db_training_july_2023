@@ -1,6 +1,8 @@
 package com.example.utils;
 import java.io.*;
+import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Properties;
 public class ConnectionFactory {
 
@@ -31,10 +33,22 @@ public class ConnectionFactory {
 		return values;
 	}
 	
-	public static void main(String[] args) {
-
-		for(String eachElement:readFromFile()) {
-			System.out.println(eachElement);
+	public static Connection getMySqlConnection() {
+		
+		Connection con =null;
+		try {
+			
+			String[] values = readFromFile();
+			
+			con = DriverManager.getConnection(values[0],values[1],values[2]);
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
 		}
+		
+		return con;
 	}
+	
+	
 }
