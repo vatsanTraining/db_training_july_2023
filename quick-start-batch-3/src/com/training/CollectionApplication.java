@@ -1,5 +1,7 @@
 package com.training;
 
+import java.util.Set;
+
 import com.training.ifaces.PatientRepository;
 import com.training.services.PatientService;
 
@@ -10,8 +12,8 @@ public class CollectionApplication {
 
 		
 		Patient vicky = new Patient(900, "vicky", 45, 92923239);
-		Patient vishal = new Patient(200, "vishal", 55, 7292439);
-		Patient vivek = new Patient(902, "vivek", 65, 92963239);
+		Patient vishal = new Patient(200, "ishika", 55, 7292439);
+		Patient vivek = new Patient(902, "yashika", 65, 92963239);
 		
 		
 		PatientRepository repo = new PatientService();
@@ -21,7 +23,14 @@ public class CollectionApplication {
 		System.out.println("Is Added :=>"+ repo.add(vicky));
 		
 		 
-		 
+	
+		Set<Patient> elements = repo.findAll();
+		
+		 for(Patient eachPatient: elements) {
+			 
+			 System.out.println(eachPatient);
+		 }
+		
 	}
 
 }

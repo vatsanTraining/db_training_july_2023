@@ -1,6 +1,6 @@
 package com.training;
 
-public class Patient {
+public class Patient implements Comparable<Patient> {
 
 	private int patientId;
 	private String patientName;
@@ -46,6 +46,11 @@ public class Patient {
 	public String toString() {
 		return "Patient [patientId=" + patientId + ", patientName=" + patientName + ", age=" + age + ", phoneNumber="
 				+ phoneNumber + "]";
+	}
+	@Override
+	public int compareTo(Patient o) {
+
+		return patientName.compareTo(o.patientName);
 	}
 
 	
