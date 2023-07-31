@@ -18,6 +18,7 @@ public class StudentService {
 	public double getDiscount(String code) {
 		
 		int codeNumber;
+		
 		double discount = 0.10;
 
 		try {
@@ -36,5 +37,16 @@ public class StudentService {
 		
 		return discount;
 
+	}
+	
+	public String gradeStudents(double mark) {
+		
+		if(mark<60) {
+			return "C";
+		} else if(mark>60 && mark <80) {
+			 return "B";
+		} else {
+			return "A";
+		}
 	}
 }

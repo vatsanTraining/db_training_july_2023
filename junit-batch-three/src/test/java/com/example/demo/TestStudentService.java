@@ -59,6 +59,18 @@ class TestStudentService {
 	}
 	
 	
+	@Test
+	@DisplayName(value = "Mark 60 should return grade C and 80 grade b and 90 grade a")
+	void testGradeStudents() {
+		
+		assertAll("Test Grade for Different Marks" ,
+					() ->  assertEquals("C", service.gradeStudents(60)),
+					() ->  assertEquals("B", service.gradeStudents(80)),
+					() -> assertEquals("A", service.gradeStudents(90))
+				);
+	}
+	
+	
 	@AfterEach
 	void tearDown() {
 		
