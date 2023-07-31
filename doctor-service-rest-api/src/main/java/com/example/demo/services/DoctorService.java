@@ -43,13 +43,13 @@ public class DoctorService {
     public int remove(int id) {
     	
     	int rowDeleted =0;
+    	System.out.println("id"+id);
+    	Optional<Doctor> isExisit = this.repo.findById(id);
     	
-    	if(this.repo.findById(id).get()!=null) {
-    		
-    		this.repo.deleteById(id);
-    		
-    		rowDeleted=1;
-    	} 
+    	  if(isExisit.isPresent()) {
+    		  this.repo.deleteById(id);
+    		  rowDeleted=1;
+    	  }
     	
     	return rowDeleted;
     }
