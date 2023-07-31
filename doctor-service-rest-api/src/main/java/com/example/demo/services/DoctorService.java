@@ -33,5 +33,25 @@ public class DoctorService {
     	return this.repo.save(entity);
     }
 	
+    public Doctor update(Doctor entity) {
+    	
+    	//UPSERT
+    	return this.repo.save(entity);
+    }
+    
+    
+    public int remove(int id) {
+    	
+    	int rowDeleted =0;
+    	
+    	if(this.repo.findById(id).get()!=null) {
+    		
+    		this.repo.deleteById(id);
+    		
+    		rowDeleted=1;
+    	} 
+    	
+    	return rowDeleted;
+    }
 	
 }
