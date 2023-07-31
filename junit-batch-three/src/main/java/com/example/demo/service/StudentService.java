@@ -41,9 +41,9 @@ public class StudentService {
 	
 	public String gradeStudents(double mark) {
 		
-		if(mark<60) {
+		if(mark<=60) {
 			return "C";
-		} else if(mark>60 && mark <80) {
+		} else if(mark>60 && mark <=80) {
 			 return "B";
 		} else {
 			return "A";
