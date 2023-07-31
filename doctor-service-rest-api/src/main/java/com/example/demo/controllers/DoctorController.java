@@ -62,7 +62,6 @@ public class DoctorController {
 	@DeleteMapping("/{id}")
 	public ResponseEntity<String> removeById(@PathVariable("id") int id){
 		
-		System.out.println("Id in controller:=>"+ id);
 		int rowDeleted = this.service.remove(id);
 		
 		return ResponseEntity.ok().body("RowsDeleted:=> "+rowDeleted);
