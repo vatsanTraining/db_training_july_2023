@@ -2,7 +2,11 @@ package com.example.demo.controllers;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,5 +30,22 @@ public class DoctorController {
 		
 		return this.service.findAll();
 	}
+	
+	@GetMapping("/{dept}")
+	public List<Doctor> findByDept(@PathVariable("dept") String dept){
+		
+		return this.service.findByDepartment(dept);
+	}
+	
+	
+	@PostMapping
+	public ResponseEntity<Doctor> save(@RequestBody Doctor entity){
+		
+		Doctor addedEntity = this.service.addDoctor(entity);
+		
+		return ResponseEntity.status(201).body(addedEntity);
+	
+	}
+	
 	
 }

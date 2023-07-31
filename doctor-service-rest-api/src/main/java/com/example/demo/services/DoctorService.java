@@ -22,5 +22,16 @@ public class DoctorService {
 		return this.repo.findAll();
 	}
 	
+    public List<Doctor> findByDepartment(String dept){
+		
+		return this.repo.getByDept(dept);
+	}
+    
+    
+    public Doctor addDoctor(Doctor entity) {
+    	
+    	return this.repo.save(entity);
+    }
+	
 	
 }
